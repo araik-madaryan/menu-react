@@ -1,8 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 import App from './App';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faPlus, faUserPlus, faPowerOff, faBriefcase, faBell, faSearch, faCalendarAlt, faFileWord, faEdit } from '@fortawesome/free-solid-svg-icons';
+import { dom } from '@fortawesome/fontawesome-svg-core';
 import * as serviceWorker from './serviceWorker';
+
+dom.watch()
+
+library.add(
+  faPlus,
+  faUserPlus,
+  faPowerOff,
+  faBriefcase,
+  faBell,
+  faSearch,
+  faCalendarAlt,
+  faFileWord,
+  faEdit
+);
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

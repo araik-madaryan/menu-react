@@ -1,0 +1,147 @@
+.Menu {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  text-align: center;
+  max-width: 100%;
+
+  ul {
+		display: flex;
+		position: fixed;
+		font-size: 24px;
+		width: 100%;
+		margin: 0;
+		padding: 2px;
+		bottom: 0;
+    background-color: #F7F7F7;
+    
+    .left-division {
+      display: flex;
+      width: 65%;
+    }
+    
+		.right-division {
+      display: flex;
+      width: 25%;
+    }
+
+		li {
+      display: block;
+		  color: darkgray;
+		  text-align: center;
+		  text-decoration: none;
+    }
+
+    button {
+      height: 100%;
+      width: 60px;
+      background: transparent;
+      border: none;
+      color: darkgray;
+      font-size: 30px;
+    }
+	}
+
+  .button-menu {
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    font-size: 30px;
+    color: white;
+    background: darkslategray;
+    animation: buttonNoRotate 0.2s ease-in-out;
+    transform: rotate(0deg);
+    z-index: 100;
+  }
+
+  @keyframes buttonNoRotate {
+    from {
+        transform: rotate(45deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column-reverse;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 60px;
+    animation: noDisplayMenu 0.2s;
+    transform : translate(0, +20px);
+    transform:scale(0);
+
+    .element, #firstElement {
+      width: 60%;
+      border-radius: .28571429rem;
+      box-shadow: 0 1px 3px 0 #d4d4d5,0 0 0 1px #d4d4d5;
+      background: #F7F7F7;
+      margin: auto;
+      margin-bottom: 10px;
+    }
+
+    #firstElement::after {
+      content:""; 
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-top: 15px solid #F7F7F7;
+      margin-left: -13px;
+      position: absolute;
+    }
+   
+  }
+
+  @keyframes noDisplayMenu {
+    from {
+      transform : translate(0px);
+      opacity: 1;
+    }
+    to {
+      transform : translate(0px, +20px);
+      opacity: 0;
+      display: none;
+    }
+  }
+
+  // isOpen
+
+  .button-menu.Open {
+    animation: buttonRotate 0.2s ease-in-out;
+    transform: rotate(45deg);
+  }
+
+  @keyframes buttonRotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(45deg);
+    }
+  }
+
+  .menu.Open {
+    animation: displayMenu 0.2s;
+    transform : translate(0, -20px);
+  }
+
+  @keyframes displayMenu {
+    from {
+      transform : translate(0px);
+      opacity: 0;
+    }
+    to {
+      transform : translate(0px, -20px);
+      opacity: 1;
+    }
+  }
+}
+
+
+
